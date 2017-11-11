@@ -1,7 +1,5 @@
 package br.com.maissaude.modelo;
 
-import java.util.Calendar;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +12,7 @@ public class Exame {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String tipo;
-	private Calendar dataSolicitacao = Calendar.getInstance();
+	private String dataSolicitacao;
 	private String status;
 	private String resultado;
 	
@@ -30,7 +28,7 @@ public class Exame {
 		return tipo;
 	}
 	
-	public Calendar getDataSolicitacao() {
+	public String getDataSolicitacao() {
 		return dataSolicitacao;
 	}
 	

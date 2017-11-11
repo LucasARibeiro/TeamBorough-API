@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Consulta {
@@ -14,7 +17,10 @@ public class Consulta {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String data;
+	@OneToMany
 	private Medico medico;
+	@ManyToOne
+	@JoinColumn(name="exame_id")
 	private List<Exame> exames;
 	private String descricao;
 	
