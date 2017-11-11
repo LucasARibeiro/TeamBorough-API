@@ -17,10 +17,10 @@ public class Consulta {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String data;
-	@OneToMany
-	private Medico medico;
 	@ManyToOne
-	@JoinColumn(name="exame_id")
+	@JoinColumn(name="medico_id")
+	private Medico medico;
+	@OneToMany
 	private List<Exame> exames;
 	private String descricao;
 	
