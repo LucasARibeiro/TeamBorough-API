@@ -1,5 +1,6 @@
 package br.com.maissaude.modelo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +12,7 @@ public class Medico {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	@Column(nullable = false)
 	private String nome;
 	private String crm;
 	private String cidade;
@@ -19,6 +21,7 @@ public class Medico {
 	public Medico() {
 		
 	}
+	
 
 	public Long getId() {
 		return id;

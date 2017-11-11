@@ -15,7 +15,7 @@ import br.com.maissaude.modelo.Medico;
 import br.com.maissaude.repository.MedicoRepository;
 
 @RestController
-@RequestMapping("/Medicos")
+@RequestMapping("/medicos")
 public class MedicoController {
 
 	@Autowired
