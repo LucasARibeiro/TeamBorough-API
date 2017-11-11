@@ -22,7 +22,7 @@ import br.com.maissaude.repository.ExameRepository;
 public class ExameController {
 	
 	@Autowired
-	ExameRepository repo;
+	private ExameRepository repo;
 	
 	@GetMapping
 	public ResponseEntity<List<Exame>> listarExames(){

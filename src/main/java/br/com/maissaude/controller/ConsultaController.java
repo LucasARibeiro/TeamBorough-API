@@ -21,7 +21,7 @@ import br.com.maissaude.repository.ConsultaRepository;
 public class ConsultaController {
 
 	@Autowired
-	ConsultaRepository repo;
+	private ConsultaRepository repo;
 
 	@GetMapping
 	public ResponseEntity<List<Consulta>> listarConsultas() {
