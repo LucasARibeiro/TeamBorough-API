@@ -12,11 +12,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-<<<<<<< HEAD
-=======
 
-import br.com.maissaude.modelo.Consulta;
->>>>>>> 47b36225f0828c9ece15b21728d67444911046fe
+
 import br.com.maissaude.modelo.Exame;
 import br.com.maissaude.repository.ExameRepository;
 
@@ -62,41 +59,4 @@ public class ExameController {
 		return ResponseEntity.ok().build();
 	}
 
-	@Autowired
-	private ExameRepository repo;
-	
-	@GetMapping
-	public ResponseEntity<List<Exame>> obterTodas() {
-		return ResponseEntity.ok().body(  repo.findAll() );
-	}
-	
-	@PutMapping
-	public ResponseEntity<Long> alterar(@RequestBody Exame novo) {
-		repo.save(novo);
-		return ResponseEntity.ok().body( novo.getId() );
-	}
-	
-	@PostMapping
-	public ResponseEntity<Long> incluir(@RequestBody Exame novo) {
-		repo.save(novo);
-		return ResponseEntity.ok().body( novo.getId() );
-	}
-	
-	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> remover(@PathVariable Long id) {
-		if (!repo.exists(id)) {
-			return ResponseEntity.notFound().build();
-		}
-		repo.delete(id);
-		return ResponseEntity.ok().build();
-	}
-	
-	@GetMapping("/{id}")
-	public ResponseEntity<Exame> recuperarPeloId(@PathVariable Long id) {
-		Exame exame = repo.findOne(id);
-		if (exame == null ) {
-			return ResponseEntity.notFound().build();
-		}
-		return ResponseEntity.ok().body(exame);
-	}
 }
